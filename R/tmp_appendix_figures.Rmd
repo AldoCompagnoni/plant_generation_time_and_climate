@@ -1,0 +1,670 @@
+---
+fontsize: 12pt
+linespread: 2
+mainfont: Arial
+title: 'Graphs on linear responses to temperature anomalies'
+knit: (function(inputFile, encoding) { 
+      rmarkdown::render(inputFile,
+                        encoding=encoding, 
+                        output_file=file.path( paste0(getwd(),'tmp_linear_plots'))) })
+output:
+  pdf_document:
+  fig_caption: true
+number_sections: true
+---
+  
+  Each page of this appendix contains a scatter plot showing, for each one of the 162 populations analyzed in this study, log($\lambda$) on the y-axis, and temperature anomalies on the x-axis. The blue line is the mean prediction of the multiple linear model (Eq. 2 in the main text) calculated across the observed temperature anomalies while keeping  precipitation anomalies at the mean value observed during the study period. The shaded grey area is the 95% confidence interval around the mean prediction.
+
+\extrafloats{200}
+\maxdeadcycles=500 
+\tableofcontents
+\listoffigures
+\newpage
+
+```{r, out.width='100%', fig.align='center', fig.cap='Actaea spicata Site A',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Actaea_spicata_Site A.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Actaea spicata Site B',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Actaea_spicata_Site B.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Arabis fecunda Charleys Gulch',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Arabis_fecunda_Charleys Gulch.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Artemisia tripartita Dubois',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Artemisia_tripartita_Dubois.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Asplenium scolopendrium Fraxinus excelsior',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Asplenium_scolopendrium_Fraxinus excelsior.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Asplenium scolopendrium Picea thinned',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Asplenium_scolopendrium_Picea thinned.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Astragalus cremnophylax var. cremnophylax Grand Canyon National Park',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Astragalus_cremnophylax_var._cremnophylax_Grand Canyon National Park.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Astragalus scaphoides 2 Haynes Creek',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Astragalus_scaphoides_2_Haynes Creek.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Astragalus scaphoides 2 McDevitt Creek',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Astragalus_scaphoides_2_McDevitt Creek.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Astragalus scaphoides 2 Sheep Corral Gulch',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Astragalus_scaphoides_2_Sheep Corral Gulch.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Astragalus scaphoides 6 Haynes Creek',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Astragalus_scaphoides_6_Haynes Creek.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Astragalus scaphoides 6 McDevitt Creek',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Astragalus_scaphoides_6_McDevitt Creek.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Astragalus scaphoides 6 Reservoir Creek',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Astragalus_scaphoides_6_Reservoir Creek.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Astragalus scaphoides 6 Sheep Corral Gulch',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Astragalus_scaphoides_6_Sheep Corral Gulch.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Astragalus tyghensis Site 10',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Astragalus_tyghensis_Site 10.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Astragalus tyghensis Site 13',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Astragalus_tyghensis_Site 13.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Astragalus tyghensis Site 25',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Astragalus_tyghensis_Site 25.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Astragalus tyghensis Site 4',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Astragalus_tyghensis_Site 4.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Astragalus tyghensis Site 41',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Astragalus_tyghensis_Site 41.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Bencomia exstipulata Tiro del Guanche',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Bencomia_exstipulata_Tiro del Guanche.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Bouteloua curtipendula Hays',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Bouteloua_curtipendula_Hays.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Bouteloua eriopoda 2 Jornada exp range',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Bouteloua_eriopoda_2_Jornada_exp_range.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Bouteloua eriopoda Green Valley',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Bouteloua_eriopoda_Green_Valley.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Bouteloua gracilis Fort Keogh',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Bouteloua_gracilis_Fort_Keogh.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Bouteloua hirsuta Hays',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Bouteloua_hirsuta_Hays.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Bouteloua rothrockii Green Valley',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Bouteloua_rothrockii_Green_Valley.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Brassica insularis Calcina',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Brassica_insularis_Calcina.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Brassica insularis Corbaghiola',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Brassica_insularis_Corbaghiola.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Brassica insularis Inzecca',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Brassica_insularis_Inzecca.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Brassica insularis Teghime',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Brassica_insularis_Teghime.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Centaurea corymbosa 2 Auzils',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Centaurea_corymbosa_2_Auzils.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Centaurea corymbosa 2 Cruzade',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Centaurea_corymbosa_2_Cruzade.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Centaurea corymbosa 2 Enferret1',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Centaurea_corymbosa_2_Enferret1.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Centaurea corymbosa 2 Enferret2',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Centaurea_corymbosa_2_Enferret2.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Centaurea corymbosa 2 Peyral',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Centaurea_corymbosa_2_Peyral.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Centaurea corymbosa 2 Portes',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Centaurea_corymbosa_2_Portes.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Centaurea corymbosa Auzils(A)',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Centaurea_corymbosa_Auzils(A).png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Centaurea corymbosa Enferret1(E1)',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Centaurea_corymbosa_Enferret1(E1).png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Centaurea corymbosa Peyral(Pe)',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Centaurea_corymbosa_Peyral(Pe).png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Cirsium pitcheri 4 CiPi 1',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Cirsium_pitcheri_4_CiPi 1.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Cirsium pitcheri 4 CiPi 2',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Cirsium_pitcheri_4_CiPi 2.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Cirsium pitcheri 4 CiPi 3',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Cirsium_pitcheri_4_CiPi 3.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Cirsium pitcheri 6 Illinois Beach State Park',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Cirsium_pitcheri_6_Illinois Beach State Park.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Cirsium pitcheri 8 Wilderness State Park',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Cirsium_pitcheri_8_Wilderness State Park.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Cirsium pitcheri 9 Miller High Dunes',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Cirsium_pitcheri_9_Miller High Dunes.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Cirsium pitcheri 9 Odgen Dunes East',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Cirsium_pitcheri_9_Odgen Dunes East.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Cirsium pitcheri 9 Odgen Dunes West',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Cirsium_pitcheri_9_Odgen Dunes West.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Cirsium pitcheri 9 State Park Big Blowout',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Cirsium_pitcheri_9_State Park Big Blowout.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Cirsium pitcheri 9 West Beach',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Cirsium_pitcheri_9_West Beach.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Cirsium undulatum Hays',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Cirsium_undulatum_Hays.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Cryptantha flava 2 Redfleet State Park',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Cryptantha_flava_2_Redfleet State Park.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Cypripedium calceolus Oparzelisko',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Cypripedium_calceolus_Oparzelisko.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Cypripedium calceolus Pogorzaly',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Cypripedium_calceolus_Pogorzaly.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Cypripedium calceolus Zabudnik',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Cypripedium_calceolus_Zabudnik.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Cypripedium fasciculatum Region 3',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Cypripedium_fasciculatum_Region 3.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Cypripedium fasciculatum Region 4',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Cypripedium_fasciculatum_Region 4.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Cypripedium fasciculatum Region 5',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Cypripedium_fasciculatum_Region 5.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Daphne rodriguezii Colom',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Daphne_rodriguezii_Colom.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Daphne rodriguezii Mesquida',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Daphne_rodriguezii_Mesquida.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Daphne rodriguezii Porter',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Daphne_rodriguezii_Porter.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Daphne rodriguezii Pudent',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Daphne_rodriguezii_Pudent.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Dicerandra frutescens Fireline Edge 1 (Pop 0)',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Dicerandra_frutescens_Fireline Edge 1 (Pop 0).png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Dicerandra frutescens Oak-hickory scrub 1 (Pop 10)',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Dicerandra_frutescens_Oak-hickory scrub 1 (Pop 10).png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Dicerandra frutescens Oak-hickory scrub 2 (Pop 12)',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Dicerandra_frutescens_Oak-hickory scrub 2 (Pop 12).png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Dicerandra frutescens Oak-hickory scrub 3 (Pop 19)',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Dicerandra_frutescens_Oak-hickory scrub 3 (Pop 19).png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Dicerandra frutescens Sand pine scrub 1 (Pop 2)',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Dicerandra_frutescens_Sand pine scrub 1 (Pop 2).png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Dicerandra frutescens Sand pine scrub 2 (Pop 4)',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Dicerandra_frutescens_Sand pine scrub 2 (Pop 4).png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Dicerandra frutescens Yard Edge (Pop 24)',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Dicerandra_frutescens_Yard Edge (Pop 24).png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Dracocephalum austriacum ipm Champcella',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Dracocephalum_austriacum_ipm_Champcella.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Dracocephalum austriacum ipm Escoyeres',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Dracocephalum_austriacum_ipm_Escoyeres.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Dracocephalum austriacum ipm Largentiere',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Dracocephalum_austriacum_ipm_Largentiere.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Dracocephalum austriacum ipm Reynier',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Dracocephalum_austriacum_ipm_Reynier.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Dracocephalum austriacum ipm StChristophe',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Dracocephalum_austriacum_ipm_StChristophe.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Dracocephalum austriacum ipm Valsenestre',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Dracocephalum_austriacum_ipm_Valsenestre.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Echinacea angustifolia Hays',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Echinacea_angustifolia_Hays.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Eriogonum longifolium var. gnaphalifolium 2 Unburned',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Eriogonum_longifolium_var._gnaphalifolium_2_Unburned.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Eryngium alpinum 2 Fournel',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Eryngium_alpinum_2_Fournel.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Eryngium alpinum 2 Pralognan',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Eryngium_alpinum_2_Pralognan.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Eryngium alpinum BER',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Eryngium_alpinum_BER.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Eryngium alpinum BOU',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Eryngium_alpinum_BOU.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Eryngium alpinum DES',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Eryngium_alpinum_DES.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Eryngium alpinum PRA',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Eryngium_alpinum_PRA.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Eryngium alpinum PRB',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Eryngium_alpinum_PRB.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Eryngium alpinum PRC',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Eryngium_alpinum_PRC.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Eryngium alpinum PRD',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Eryngium_alpinum_PRD.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Eryngium cuneifolium 72',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Eryngium_cuneifolium_72.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Eryngium cuneifolium 85',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Eryngium_cuneifolium_85.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Eryngium cuneifolium 91',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Eryngium_cuneifolium_91.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Frasera speciosa 2 Cumberland Pass, Colorado',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Frasera_speciosa_2_Cumberland Pass, Colorado.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Haplopappus radiatus 1in',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Haplopappus_radiatus_1in.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Haplopappus radiatus 1out',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Haplopappus_radiatus_1out.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Haplopappus radiatus 2in',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Haplopappus_radiatus_2in.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Haplopappus radiatus 2out',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Haplopappus_radiatus_2out.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Haplopappus radiatus 3in',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Haplopappus_radiatus_3in.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Haplopappus radiatus 3out',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Haplopappus_radiatus_3out.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Haplopappus radiatus 4in',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Haplopappus_radiatus_4in.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Haplopappus radiatus 4out',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Haplopappus_radiatus_4out.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Haplopappus radiatus 5in',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Haplopappus_radiatus_5in.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Haplopappus radiatus 5out',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Haplopappus_radiatus_5out.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Hedyotis nigricans Hays',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Hedyotis_nigricans_Hays.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Helianthella quinquenervis Rocky Mountain Biological Laboratory',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Helianthella_quinquenervis_Rocky Mountain Biological Laboratory.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Helianthemum juliae Teide National Park',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Helianthemum_juliae_Teide National Park.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Hesperostipa comata 2 Fort Keogh',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Hesperostipa_comata_2_Fort_Keogh.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Hesperostipa comata Dubois',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Hesperostipa_comata_Dubois.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Horkelia congesta Long Tom ACEC',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Horkelia_congesta_Long Tom ACEC.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Kosteletzkya pentacarpos Ricarda lagoon',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Kosteletzkya_pentacarpos_Ricarda lagoon.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Lesquerella ovalifolia Hays',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Lesquerella_ovalifolia_Hays.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Lomatium bradshawii Fisher Butte 0',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Lomatium_bradshawii_Fisher Butte 0.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Lomatium bradshawii Fisher Butte 1',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Lomatium_bradshawii_Fisher Butte 1.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Lomatium bradshawii Fisher Butte 2',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Lomatium_bradshawii_Fisher Butte 2.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Lomatium bradshawii Long Tom',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Lomatium_bradshawii_Long Tom.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Lomatium bradshawii Rose Prairie 0',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Lomatium_bradshawii_Rose Prairie 0.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Lomatium bradshawii Rose Prairie 1',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Lomatium_bradshawii_Rose Prairie 1.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Lomatium bradshawii Rose Prairie 2',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Lomatium_bradshawii_Rose Prairie 2.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Opuntia imbricata Sevilleta National Wildlife Refuge',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Opuntia_imbricata_Sevilleta National Wildlife Refuge.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Opuntia macrorhiza 2 Plot 52',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Opuntia_macrorhiza_2_Plot 52.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Opuntia macrorhiza 2 Plot 57',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Opuntia_macrorhiza_2_Plot 57.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Opuntia rastrera Grassland',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Opuntia_rastrera_Grassland.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Opuntia rastrera Nopalera',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Opuntia_rastrera_Nopalera.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Orchis purpurea Light Environment 1',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Orchis_purpurea_Light Environment 1.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Orchis purpurea Light Environment 2',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Orchis_purpurea_Light Environment 2.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Orchis purpurea Light Environment 3',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Orchis_purpurea_Light Environment 3.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Orchis purpurea Shaded site 1',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Orchis_purpurea_Shaded site 1.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Orchis purpurea Shaded site 2',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Orchis_purpurea_Shaded site 2.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Orchis purpurea Shaded site 3',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Orchis_purpurea_Shaded site 3.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Panax quinquefolius 6 EKY',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Panax_quinquefolius_6_EKY.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Panax quinquefolius 6 NY',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Panax_quinquefolius_6_NY.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Paronychia jamesii Hays',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Paronychia_jamesii_Hays.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Pascopyrum smithii Fort Keogh',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Pascopyrum_smithii_Fort_Keogh.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Pediocactus bradyi Badger Creek',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Pediocactus_bradyi_Badger Creek.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Pediocactus bradyi North Canyon East',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Pediocactus_bradyi_North Canyon East.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Pediocactus bradyi North Canyon West',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Pediocactus_bradyi_North Canyon West.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Pediocactus bradyi Soap Creek',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Pediocactus_bradyi_Soap Creek.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Phyllanthus emblica 2 Biligiri Rangaswamy Temple Wildlife Sanctuary',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Phyllanthus_emblica_2_Biligiri Rangaswamy Temple Wildlife Sanctuary.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Phyllanthus indofischeri Biligiri Rangaswamy Temple Wildlife Sanctuary',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Phyllanthus_indofischeri_Biligiri Rangaswamy Temple Wildlife Sanctuary.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Poa secunda 2 Fort Keogh',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Poa_secunda_2_Fort_Keogh.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Poa secunda Dubois',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Poa_secunda_Dubois.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Primula veris 3 Site 1',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Primula_veris_3_Site 1.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Primula veris 3 Site 2',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Primula_veris_3_Site 2.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Pseudoroegneria spicata Dubois',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Pseudoroegneria_spicata_Dubois.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Psoralea tenuiflora Hays',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Psoralea_tenuiflora_Hays.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Purshia subintegra Dry',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Purshia_subintegra_Dry.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Purshia subintegra Moist',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Purshia_subintegra_Moist.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Pyrrocoma radiata Gentle, east-facing slope',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Pyrrocoma_radiata_Gentle, east-facing slope.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Pyrrocoma radiata Gentle, west-facing slope',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Pyrrocoma_radiata_Gentle, west-facing slope.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Pyrrocoma radiata South-facing slope',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Pyrrocoma_radiata_South-facing slope.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Pyrrocoma radiata West-facing slope',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Pyrrocoma_radiata_West-facing slope.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Ratibida columnifera Hays',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Ratibida_columnifera_Hays.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Schizachyrium scoparium Hays',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Schizachyrium_scoparium_Hays.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Serapias cordigera Cerchiara',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Serapias_cordigera_Cerchiara.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Serapias cordigera Cutura',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Serapias_cordigera_Cutura.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Serapias cordigera Falconara Albanese',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Serapias_cordigera_Falconara Albanese.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Serapias cordigera Piano Lago',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Serapias_cordigera_Piano Lago.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Serapias cordigera Piano Monello',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Serapias_cordigera_Piano Monello.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Serapias cordigera San Biase',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Serapias_cordigera_San Biase.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Silene spaldingii Eureka',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Silene_spaldingii_Eureka.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Solidago mollis Hays',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Solidago_mollis_Hays.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Sphaeralcea coccinea Hays',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Sphaeralcea_coccinea_Hays.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Sporobolus flexuosus Jornada exp range',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Sporobolus_flexuosus_Jornada_exp_range.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Thelesperma megapotamicum Hays',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Thelesperma_megapotamicum_Hays.png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Trillium ovatum Big Creek, Bitterroot Valley (Bitterroot National Forest)',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Trillium_ovatum_Big Creek, Bitterroot Valley (Bitterroot National Forest).png')
+```
+
+```{r, out.width='100%', fig.align='center', fig.cap='Trillium ovatum Grant Creek, Missoula Valley (Lolo National Forest)',echo=F}
+knitr::include_graphics('C:/CODE/plant_generation_time_and_climate/results/spp_spec/temp/Trillium_ovatum_Grant Creek, Missoula Valley (Lolo National Forest).png')
+```
