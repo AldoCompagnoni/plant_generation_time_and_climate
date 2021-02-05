@@ -6,8 +6,6 @@ library(lme4)
 library(nlme)
 library(ggthemes)
 library(testthat)
-library(rstan)
-library(shinystan)
 library(MASS)
 library(ggpubr)
 library(cowplot)
@@ -24,7 +22,7 @@ clim_m <- read.csv( 'data/map_mat_wai.csv',
                     stringsAsFactors = F) 
 
 # demographic data and climatic anomalies
-all_df <- read.csv( 'results/lambdas_vs_anomalies.csv',
+all_df <- read.csv( 'data/lambdas_vs_anomalies.csv',
                     stringsAsFactors = F ) 
 
 # generation time for synthesis species
@@ -64,6 +62,7 @@ mod_l <- list( NA, NA, NA, NA, NA ) %>%
                       'pt0_p2', 'pt0_t2',
                       'pt0_p2t2' ) )
 
+
 # mean function to estimate response to climate
 coef_by_spp <- function( ii ){
   
@@ -75,6 +74,9 @@ coef_by_spp <- function( ii ){
         subset( MatrixPopulation == spp_pop_df$MatrixPopulation[ii] )
   
   spp_name <- spp_pop_df$SpeciesAuthor[ii]
+  spp_pop  <- paste0( unique(an_df$SpeciesAuthor), '_',
+                      unique(an_df$MatrixPopulation) )
+  pop      <- unique(an_df$MatrixPopulation)
   
   # print combination of spp and pop!
   print( unique(an_df$spp_pop) )
@@ -145,10 +147,12 @@ coef_by_spp <- function( ii ){
     out <- data.frame( 
       
       # Coefficients
+      a_pt0     = coef(mod_pt0)[1],
       ppt_pt0   = coef(mod_pt0)[2],
       tmp_pt0   = coef(mod_pt0)[3],
       
       # Coefficient standard deviations
+      a_pt0_sd    = summary(mod_pt0)$tTable[2,'Std.Error'],
       ppt_pt0_sd  = summary(mod_pt0)$tTable[2,'Std.Error'],
       tmp_pt0_sd  = summary(mod_pt0)$tTable[3,'Std.Error'],
       
@@ -228,10 +232,12 @@ coef_by_spp <- function( ii ){
     out      <- data.frame(
       
       # Coefficients
+      a_pt0     = coef(mod_pt0)[1],
       ppt_pt0   = coef(mod_pt0)[2],
       tmp_pt0   = coef(mod_pt0)[3],
       
       # Coefficient standard deviations
+      a_pt0_sd    = summary(mod_pt0)$tTable[2,'Std.Error'],
       ppt_pt0_sd  = summary(mod_pt0)$tTable[2,'Std.Error'],
       tmp_pt0_sd  = summary(mod_pt0)$tTable[3,'Std.Error'],
       
@@ -291,8 +297,103 @@ coef_by_spp <- function( ii ){
     }
     
   }
+  
+  # calculate confidence interval from scratch
+  confint_calc <- function( pred_name, param_name ){
     
-  out
+    # select the parameters we need!
+    par_v  <- c('ppt_pt0', 'tmp_pt0')
+    var_v  <- c('ppt_t0',  'tmp_t0')
+    b0     <- dplyr::select(out, a_pt0 ) %>% as.numeric
+    b1     <- dplyr::select(out, param_name ) %>% as.numeric
+    b2     <- dplyr::select(out, setdiff(par_v, param_name) ) %>% as.numeric
+    
+    # other variables
+    n      <- nrow(an_df)
+    x      <- an_df[,pred_name]
+    cov_x  <- an_df[,setdiff(var_v, pred_name)] %>% mean
+    pred_x <- an_df[,pred_name] %>% sort
+    
+    # Predict y at the given value of x (argument pred.x); 
+    # at the mean value of the covariate (cov_c * cov_x)
+    pred_y <- b0 + (b1 * pred_x) + (b2 * cov_x)
+    
+    # Find SSE and MSE
+    sse <- sum((an_df$log_lambda - mod_pt0$fitted)^2)
+    mse <- sse / (n - 3)
+    
+    # Critical value of t
+    t.val <- qt(0.975, n - 3) 
+    
+    # Standard error of the mean estimate  
+    mean.se.fit <- (1 / n + (pred_x - mean(x))^2 / (sum((x - mean(x))^2))) 
+    
+    # Mean Estimate Upper and Lower Confidence limits at 95% Confidence
+    mean.conf.upper <- pred_y + t.val * sqrt(mse * mean.se.fit)
+    mean.conf.lower <- pred_y - t.val * sqrt(mse * mean.se.fit)
+    
+    # the confidence intervals
+    data.frame( yhat  = pred_y,
+                x_seq = pred_x,
+                upr   = mean.conf.upper,
+                lwr   = mean.conf.lower )
+    
+  }
+  
+  ci_p <- confint_calc( 'ppt_t0', "ppt_pt0")
+  ci_t <- confint_calc( 'tmp_t0', "tmp_pt0")
+  
+  # Temperature plot
+  ggplot(an_df) +
+    geom_point(  aes( tmp_t0, log_lambda ) ) +
+    geom_line( data = ci_t,
+               aes( x = x_seq,
+                    y = yhat ),
+               color = '#0072B2',
+               lwd   = 2 ) +
+    geom_ribbon( data = ci_t,
+                 aes( x    = x_seq,
+                      ymin = lwr,
+                      ymax = upr ),
+                 alpha = 0.5,
+                 fill = 'grey' ) +
+    theme_minimal( ) +
+    labs( x = "Temperature anomaly",
+          y = expression('log('*lambda*')'),
+          title = gsub('_',' ',spp_name),
+          subtitle = paste0('Population: ',pop) ) +
+    theme( axis.title = element_text( size = 18 ),
+           axis.text  = element_text( size = 15 ),
+           plot.title    = element_text( size = 20, hjust=0.5),
+           plot.subtitle = element_text( size = 18, hjust=0.5) ) + 
+    ggsave( paste0('results/spp_spec/temp/', spp_pop,'.png'),
+            width=6.3, height=6.3 )
+  
+  # Precipitation plot
+  ggplot(an_df) +
+    geom_point(  aes( ppt_t0, log_lambda ) ) +
+    geom_line( data = ci_p,
+               aes( x = x_seq,
+                    y = yhat ),
+               color = '#0072B2',
+               lwd   = 2 ) +
+    geom_ribbon( data = ci_p,
+                 aes( x    = x_seq,
+                      ymin = lwr,
+                      ymax = upr ),
+                 alpha = 0.5,
+                 fill = 'grey' ) +
+    theme_minimal( ) +
+    labs( x = "Precipitation anomaly",
+          y = expression('log('*lambda*')'),
+          title = gsub('_',' ',spp_name),
+          subtitle = paste0('Population: ',pop) ) +
+    theme( axis.title = element_text( size = 18 ),
+           axis.text  = element_text( size = 15 ),
+           plot.title    = element_text( size = 20, hjust=0.5),
+           plot.subtitle = element_text( size = 18, hjust=0.5) ) + 
+    ggsave( paste0('results/spp_spec/prec/', spp_pop,'.png'),
+            width=6.3, height=6.3 )
   
 }
 
