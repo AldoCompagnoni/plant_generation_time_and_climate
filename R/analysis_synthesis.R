@@ -721,6 +721,7 @@ tmp_orgtype <- coef_h %>%
   
 p_orgtype <- plot_grid( ppt_orgtype, tmp_orgtype,
                         labels = 'AUTO',
+                        label_fontface = "plain",
                         label_size = 18,
                         align='h', 
                         nrow = 2, ncol = 1 )
@@ -995,6 +996,7 @@ shared_legend_cowplot <- function( x, y ){
   h_gt     <- plot_grid( x + theme(legend.position="none"),
                          y + theme(legend.position="none"),
                          labels = 'AUTO',
+                         label_fontface = "plain",
                          label_size = 18,
                          align='h', 
                          nrow = 2, ncol = 1 )
@@ -1223,7 +1225,7 @@ graph_2x1 <- function( y_name, x_name, bs_df, lty_i,
     labs( y = paste0('|Effect of ',y_name,'|'),
           x = xlab ) +
     theme( axis.text  = element_text(size=10),
-           axis.title = element_text(size=15),
+           axis.title = element_text(size=12),
            strip.text = element_text(size=10) ) +
     scale_color_colorblind()
   
@@ -1270,7 +1272,7 @@ graph_2x1 <- function( y_name, x_name, bs_df, lty_i,
       labs( y = paste0('|Effect of ',y_name,'|'),
             x = xlab ) +
       theme( axis.text  = element_text(size=10),
-             axis.title = element_text(size=15),
+             axis.title = element_text(size=12),
              strip.text = element_text(size=10) ) +
       scale_colour_discrete()
   
@@ -1292,6 +1294,7 @@ shared_legend_cowplot <- function( x, y ){
   h_gt     <- plot_grid( x + theme(legend.position="none"),
                          y + theme(legend.position="none"),
                          labels = 'AUTO',
+                         label_fontface = "plain",
                          label_size = 18,
                          align='h', 
                          nrow = 2, ncol = 1 )
