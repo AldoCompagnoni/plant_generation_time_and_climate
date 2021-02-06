@@ -395,6 +395,8 @@ coef_by_spp <- function( ii ){
     ggsave( paste0('results/spp_spec/prec/', spp_pop,'.png'),
             width=6.3, height=6.3 )
   
+  out 
+  
 }
 
 # Store single pop coefficients 
