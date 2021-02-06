@@ -24,11 +24,12 @@ source( 'R/analysis_synthesis.R' )
 # Write code for appendices
 source( 'R/write_rmd_linear_figures.R' )
 
-# "Knit" the RMarkdown files
+# "Knit" the Rmarkdown files for temperature figures
 rmarkdown::render('R/tmp_appendix_figures.Rmd',
                   output_dir  = getwd(),
                   output_file = 'tmp_appendix_figures.pdf')
 
+# "Knit" the Rmarkdown files for precipitation figures
 rmarkdown::render('R/ppt_appendix_figures.Rmd',
                   output_dir  = getwd(),
                   output_file = 'ppt_appendix_figures.pdf')
