@@ -37,7 +37,7 @@ output:
 number_sections: true
 ---
     
-Each page of this appendix contains a scatter plot showing, for each one of the 162 populations analyzed in this study, log($\\lambda$) on the y-axis, and precipitation anomalies on the x-axis. The blue line is the mean prediction of the multiple linear model (Eq. 2 and 3 in the main text) calculated across the observed precipitation anomalies while keeping  temperature anomalies at the mean value observed during the study period. The shaded grey area is the 95% confidence interval around the mean prediction. Note that these plots show only linear relationships with annual precipitation anomalies. The four populations for which model selection supported a nonlinear relationship with precipitation are represented in Supplementary Figures 4 and 5.
+Each page of this document contains a scatter plot showing, for each one of the 162 populations analyzed in this study, log($\\lambda$) on the y-axis, and precipitation anomalies on the x-axis. The blue line is the mean prediction of the multiple linear model (Eq. 2 and 3 in the main text) calculated across the observed precipitation anomalies while keeping  temperature anomalies at the mean value observed during the study period. The shaded grey area is the 95% confidence interval around the mean prediction. Note that these plots show only linear relationships with annual precipitation anomalies. The four populations for which model selection supported a nonlinear relationship with precipitation are represented in Supplementary Figures 4 and 5.
   
 \\extrafloats{200}
 \\maxdeadcycles=500 
@@ -63,7 +63,7 @@ output:
 number_sections: true
 ---
   
-Each page of this appendix contains a scatter plot showing, for each one of the 162 populations analyzed in this study, log($\\lambda$) on the y-axis, and temperature anomalies on the x-axis. The blue line is the mean prediction of the multiple linear model (Eq. 2 and 3 in the main text) calculated across the observed temperature anomalies while keeping  precipitation anomalies at the mean value observed during the study period. The shaded grey area is the 95% confidence interval around the mean prediction. Note that these plots show only linear relationships with annual temperature anomalies. The six populations for which model selection supported a nonlinear relationship with temperature are represented in Supplementary Figures 3 and 5.
+Each page of this document contains a scatter plot showing, for each one of the 162 populations analyzed in this study, log($\\lambda$) on the y-axis, and temperature anomalies on the x-axis. The blue line is the mean prediction of the multiple linear model (Eq. 2 and 3 in the main text) calculated across the observed temperature anomalies while keeping  precipitation anomalies at the mean value observed during the study period. The shaded grey area is the 95% confidence interval around the mean prediction. Note that these plots show only linear relationships with annual temperature anomalies. The six populations for which model selection supported a nonlinear relationship with temperature are represented in Supplementary Figures 3 and 5.
 
 \\extrafloats{200}
 \\maxdeadcycles=500 
@@ -80,6 +80,6 @@ ppt_figs <- paste( lapply(1:162,write_it, ppt_plot_f, 'prec') %>% unlist, collap
 tmp_figs <- paste( lapply(1:162,write_it, tmp_plot_f, 'temp') %>% unlist, collapse = '\n\n' )
 
 # Rmarkdown files
-writeLines( paste0(ppt_header, ppt_figs), con = 'R/ppt_appendix_figures.Rmd')
-writeLines( paste0(tmp_header, tmp_figs), con = 'R/tmp_appendix_figures.Rmd')
+writeLines( paste0(ppt_header, ppt_figs), con = 'R/ppt_bivariate_plots.Rmd')
+writeLines( paste0(tmp_header, tmp_figs), con = 'R/tmp_bivariate_plots.Rmd')
 
