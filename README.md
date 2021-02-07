@@ -6,6 +6,6 @@ This repository provides the data and code to run the analyses of the article "H
 
 2. The file `wrapper.R` runs all analyses by sourcing the scripts in the `R/` directory. Make sure to run the `wrapper.R` after opening the `plant_generation_time_and_climate.Rproj` file.
 
-3. The pdf files in the main directory contain bivariate plots, and the associated linear models, that link log($\lambda$) values to annual precipitation and temperature anomalies for each of the 162 populations contained in the study. These pdf files are supposed to be be re-produced and overwritten when running the `wrapper.R` file.
+3. The pdf files in the main directory contain bivariate plots, and the associated linear models, that link log(lambda) values to annual precipitation and temperature anomalies for each of the 162 populations contained in the study. These pdf files are supposed to be be re-produced and overwritten when running the `wrapper.R` file.
 
 
