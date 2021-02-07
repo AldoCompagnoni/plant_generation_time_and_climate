@@ -25,12 +25,12 @@ source( 'R/analysis_synthesis.R' )
 source( 'R/write_rmd_linear_figures.R' )
 
 # "Knit" the Rmarkdown files for temperature figures
-rmarkdown::render('R/tmp_appendix_figures.Rmd',
+rmarkdown::render('R/tmp_bivariate_plots.Rmd',
                   output_dir  = getwd(),
-                  output_file = 'tmp_appendix_figures.pdf')
+                  output_file = 'tmp_bivariate_plots.pdf')
 
 # "Knit" the Rmarkdown files for precipitation figures
-rmarkdown::render('R/ppt_appendix_figures.Rmd',
+rmarkdown::render('R/ppt_bivariate_plots.Rmd',
                   output_dir  = getwd(),
-                  output_file = 'ppt_appendix_figures.pdf')
+                  output_file = 'ppt_bivariate_plots.pdf')
 
