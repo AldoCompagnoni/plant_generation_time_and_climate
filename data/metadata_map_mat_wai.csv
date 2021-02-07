@@ -1,0 +1,9 @@
+Variable,Meaning
+SpeciesAuthor,Species name used in the original study. Number at the end refer 
+MatrixPopulation,Population to which the log_lambda values refer to. Combining MatrixPopulation to SpeciesAuthor provides the 162 populations that make up the dataset
+spp_pop,"Combination of ""SpeciesAuthor"" and ""MatrixPopulation"". This is variable to facilitate analyses."
+Lat,Latitude referred to each MatrixPopulation
+Lon,Longitude referred to each MatrixPopulation
+mat,Mean annual temperature corresponding to spp_pop
+map,Mean annual precipitation corresponding to spp_pop
+wai,Water availability index corresponding to spp_pop

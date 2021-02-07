@@ -1,0 +1,4 @@
+Variable,Meaning
+SpeciesAuthor,Species name used in the original study. Number at the end refers to studies that use the same specific epithet.
+GenT,Generation time
+log_gen_t,Log of GenT

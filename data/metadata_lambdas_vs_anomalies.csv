@@ -1,0 +1,27 @@
+Variable,Meaning
+SpeciesAuthor,Species name used in the original study. Number at the end refers to studies that use the same specific epithet.
+OrganismType,"Plant type. Values: ""Herbaceous perennial"", ""Shrub"", ""Succulent"", ""Fern"", ""Tree"""
+DicotMonoc,"Dicot or Monocot species. Values: ""Monocot"", ""Eudicot"""
+AngioGymno,"Angiosperm or Gymnosperm species? Value: ""Angiosperm"", ""Gymno"""
+graminoid,"Is this a graminoid species or not? Values: ""yes"", ""no"""
+MatrixPopulation,Population to which the log_lambda values refer to. Combining MatrixPopulation to SpeciesAuthor provides the 162 populations that make up the dataset
+MatrixTreatment,"Treatment (if any) associated with each log_lambda values. Treatments can refer to either experimental manipulations, or to observational conditions (e.g. habitat conditions)"
+MatrixReplicate,"Spatial replicates nested within MatrixPopulation. These replicates are assumed to be separate populations (e.g. not connected by dispersal), but they do not have separate coordinates (Lat/Lon)."
+Lat,Latitude referred to each MatrixPopulation
+Lon,Longitude referred to each MatrixPopulation
+ppt_mean,Mean annual precipitation at each MatrixPopulation
+ppt_sd,Standard deviation of annual precipitation at ech MatrixPopulation
+tmp_mean,Mean annual temperature at each MatrixPopulation
+tmp_sd,Standard deviation of annual temperature at ech MatrixPopulation
+spp_pop,"Combination of ""SpeciesAuthor"" and ""MatrixPopulation"". This is variable to facilitate analyses."
+spp_rep,"Combination of ""SpeciesAuthor"" and ""MatrixReplicate"". This is variable to facilitate analyses."
+MatrixStartYear,Starting year of the demographic transition log_lambda refers to. E.g. when log_lambda = 0 corresponds to MatrixStartYear 1998 means that the asymptotic population growth rate of the population implied no change in population numbers between 1998 and 1999.
+MatrixEndYear,Ending year of the demographic transition log_lambda refers to. E.g. when log_lambda = 0 corresponds to MatrixEndYear == 1999 means that the asymptotic population growth rate of the population implied no change in population numbers between 1998 and 1999.
+cov,"Covariate, if any, associated with each matrix. The covariate can be either continuous or categorical."
+cov2,"Second covariate, if any, associated with each matrix."
+type,"Type of covariate, if any. Value: ""continuous"", ""discrete"", ""continuous; discrete"""
+levels,Number of levels for categorical covariates
+cov_n,"Number of covariates associated with each study. Values: ""1"", ""2"""
+ppt_t0,Annual precipitation anomaly (z-score) observed between MatrixStartYear and MatrixEndYear
+tmp_t0,Annual temperature anomaly (z-score) observed between MatrixStartYear and MatrixEndYear
+log_lambda,"log of lambda (asymptotic population growth rate) referred to each unique combination of SpeciesAuthor, MatrixPopulation, and MatrixStartYear (or MatrixEndYear)."
